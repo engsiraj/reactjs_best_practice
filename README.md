@@ -8,13 +8,13 @@ making react js easier with best practice at one place.
 - [tips and tricks](#tips-and-tricks)
 - [import and exports components](#import-and-exports-components)
 - [import and exports files and links ](#import-and-exports-files-and-links)
-- [destructuring props in react](#destructuring-props-in-react)
+- [import and exports maping through array ](#import-and-exports-maping-through-array)
 - [destructuring props in react](#destructuring-props-in-react)
 
 
 ## first requirement
 
-Although react js is Javascript based frontend libarary you have to learn the logic and structure of js. but there are some pre requirement for the libarary to learn theses are includes only basics of `html`, `css`, `dom`,`es6`, `node` and `npm`. although these are requirements you should have basic understanding of these and not needed to **master** them all at once.
+Although react js is Javascript based frontend libarary you have to learn the logic and structure of js. but there are some pre requirement for the libarary to learn these are includes only basics of `html`, `css`, `dom`,`es6`, `node` and `npm`. although these are requirements you should have basic understanding of them and not to be master them all at once.
 
 ## installation 
 
@@ -56,14 +56,15 @@ import { ChannelCard, VideoCard, ChannelDetail, Feed } from "./";
 First we will create file for adding what we want to export `utils/contant.js/ts/jsx` for components.
 
 ```javascript
+// mui components
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import HomeIcon from "@mui/icons-material/Home";
 import CodeIcon from "@mui/icons-material/Code";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
-
+//logo.png link
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
-
+//react icons
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
   { name: "JS Mastery", icon: <CodeIcon /> },
@@ -71,7 +72,7 @@ export const categories = [
   { name: "ReactJS", icon: <CodeIcon /> },
   { name: "NextJS", icon: <CodeIcon /> },
 ];
-
+// links url
 export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
 export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
 export const demoVideoUrl = "/video/GDa8kZLNhJ4";
@@ -87,6 +88,23 @@ import {
 } from "../utils/constant";
 ```
 
+## import and exports maping through array
+
+```js
+// importing images 
+import post1 from "assets/post1.png";
+import post2 from "assets/post2.png";
+import post3 from "assets/post3.png";
+import post4 from "assets/post4.png";
+import post5 from "assets/post5.png";
+import post6 from "assets/post6.png";
+// adding to the array
+const posts = [post1,post2,post3,post4,post5,post6,];
+// maping array in the  div
+posts.map((post, index) => <div key={`post-${index}`} src={post} />
+
+```
+
 ## destructuring props in react
 
 there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
@@ -98,7 +116,7 @@ there are many ways for destructuring props in react js we will explore only few
 function Product(props) {
     return (
       <div>
-        <img src={props.img} alt="products" />
+      <img src={props.img} alt="products" />
         <h4>{props.name}</h4>
         <p>{props.description}</p>
         <h4>{props.price}</h4>
@@ -120,7 +138,7 @@ function Product = (props) => {
     const { img, name, desc, price} = props;
     return (
       <div>
-  		<img src={img} alt="products" />
+      <img src={img} alt="products" />
         <h4>{name}</h4>
         <p>{description}</p>
         <h4>{price}</h4>
@@ -137,7 +155,7 @@ export default Product
 function Product = ({ img, name, desc, price}) => {
     return (
       <div>
-  		<img src={img} alt="products" />
+      <img src={img} alt="products" />
         <h4>{name}</h4>
         <p>{description}</p>
         <h4>{price}</h4>
@@ -170,9 +188,10 @@ price="$40"
 />
 ```
 
-## destructuring props in react
 
-there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
+
+
+
 
 ## author
 
