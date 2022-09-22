@@ -3,6 +3,7 @@
 making react js easier with best practice at one place. 
 
 
+- [first requirement](#first-requirement)
 - [installation](#installation)
 - [tips and tricks](#tips-and-tricks)
 - [import and exports components](#import-and-exports-components)
@@ -10,6 +11,10 @@ making react js easier with best practice at one place.
 - [destructuring props in react](#destructuring-props-in-react)
 - [destructuring props in react](#destructuring-props-in-react)
 
+
+## first requirement
+
+Although react js is Javascript based frontend libarary you have to learn the logic and structure of js. but there are some pre requirement for the libarary to learn theses are includes only basics of `html`, `css`, `dom`,`es6`, `node` and `npm`. although these are requirements you should have basic understanding of these and not needed to **master** them all at once.
 
 ## installation 
 
@@ -169,4 +174,6 @@ price="$40"
 
 there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
 
-errors are expected if you find one report it to the author.
+## author
+
+errors are expected if you find one report it to the [author](https://twitter.com/engsiraj_).
