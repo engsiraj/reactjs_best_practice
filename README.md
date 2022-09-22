@@ -1,12 +1,24 @@
 # React JS Best Practices
 
-List Contains usefull features, functions, methods Of React and Javascript.
+making react js easier with best practice at one place. 
 
+
+- [installation](#installation)
 - [tips and tricks](#tips-and-tricks)
 - [import and exports components](#import-and-exports-components)
 - [import and exports files and links ](#import-and-exports-files-and-links)
 - [destructuring props in react](#destructuring-props-in-react)
+- [destructuring props in react](#destructuring-props-in-react)
 
+
+## installation 
+
+Although react js need some time for installation so you can use [vite](https://vitejs.dev/guide/) instead of installing react directly. it will save lot of your time and provide more feature along with.
+
+```js
+npm create vite@latest
+
+```
 ## tips and tricks
 
 - Create a good folder-structure
@@ -81,7 +93,6 @@ there are many ways for destructuring props in react js we will explore only few
 function Product(props) {
     return (
       <div>
-//it uses the value of props by defining the parameter as props objects
         <img src={props.img} alt="products" />
         <h4>{props.name}</h4>
         <p>{props.description}</p>
@@ -101,11 +112,10 @@ export default Product
 
 function Product = (props) => {
 //First Step: Destructuring within the body of the function
-    const { img, name, desc, price} = props ;
+    const { img, name, desc, price} = props;
     return (
       <div>
   		<img src={img} alt="products" />
-//Second Step: receive the properties where you need them by stating the names of the properties without attaching the prefix ‘props.’
         <h4>{name}</h4>
         <p>{description}</p>
         <h4>{price}</h4>
@@ -123,7 +133,6 @@ function Product = ({ img, name, desc, price}) => {
     return (
       <div>
   		<img src={img} alt="products" />
-//Second Step: receive the properties where you need them by stating the names of the properties without attaching the prefix ‘props.’
         <h4>{name}</h4>
         <p>{description}</p>
         <h4>{price}</h4>
@@ -132,25 +141,32 @@ function Product = ({ img, name, desc, price}) => {
 }
 
 export default Product
-
-//using props values from product functuion
-
-<Product
-          img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/6142201/1.jpg?2933"
-          name="Cyxus"
-          desc="Non-Slip Fitness Leisure Running Sneakers"
-          price="$29"
-        />
-        <Product
-          img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/241417/1.jpg?6747"
-          name="Vitike"
-          desc="Latest Men Sneakers -Black"
-          price="$100"
-        />
-        <Product
-          img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/06/4410121/1.jpg?4437"
-          name="Aomei"
-          desc="Men's Trend Casual Sports Shoe"
-          price="$40"
-        />
 ```
+using props values from product functuion
+
+```javascript
+<Product
+img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/6142201/1.jpg?2933"
+name="Cyxus"
+desc="Non-Slip Fitness Leisure Running Sneakers"
+price="$29"
+/>
+<Product
+img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/241417/1.jpg?6747"
+name="Vitike"
+desc="Latest Men Sneakers -Black"
+price="$100"
+/>
+<Product
+img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/06/4410121/1.jpg?4437"
+name="Aomei"
+desc="Men's Trend Casual Sports Shoe"
+price="$40"
+/>
+```
+
+## destructuring props in react
+
+there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
+
+errors are expected if you find one report it to the author.
