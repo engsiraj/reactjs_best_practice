@@ -5,11 +5,13 @@ making react js easier with best practice at one place.
 
 - [first requirement](#first-requirement)
 - [installation](#installation)
-- [tips and tricks](#tips-and-tricks)
+- [jsx](#jsx)
+- [elements rendering](#elements-rendering)
 - [import and exports components](#import-and-exports-components)
 - [import and exports files and links ](#import-and-exports-files-and-links)
 - [import and exports maping through array ](#import-and-exports-maping-through-array)
 - [destructuring props in react](#destructuring-props-in-react)
+- [tips and tricks](#tips-and-tricks)
 
 
 ## first requirement
@@ -24,21 +26,33 @@ Although react js need some time for installation so you can use [vite](https://
 npm create vite@latest
 
 ```
-## tips and tricks
 
-- Create a good folder-structure
-- Keep your key prop unique across your whole app
-- don't use inline-styles
-- use functional components (like arrow-functions)
-- maintain a proper import structure (third-party imports first --> internal imports below)
-- Maintain a structured import order
-- format your code before committing
+## main concepts
+
+You donot need to hello world everytime just put some attention to the concepts and code 
+
+## jsx
+
+Jsx is nothing more than the combination of `javascript` and `xml` react is rendering the logic in jsx to show/load the elements.
+
+```js
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+```
+## elements rendering
+
+we can render our element/function or piece of js code any where in jsx just using `{}`.
+
+```js
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+```
 
 ## import and exports components
 
 First we will create file for adding what we want to export `index.js/ts/jsx` in components folder.
 
-```javascript
+```js
 //export your component as index.js/ts/jsx file.
 
 export { default as ChannelCard } from "./ChannelCard";
@@ -55,7 +69,7 @@ import { ChannelCard, VideoCard, ChannelDetail, Feed } from "./";
 
 First we will create file for adding what we want to export `utils/contant.js/ts/jsx` for components.
 
-```javascript
+```js
 // mui components
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import HomeIcon from "@mui/icons-material/Home";
@@ -109,7 +123,7 @@ posts.map((post, index) => <div key={`post-${index}`} src={post} />
 
 there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
 
-```javascript
+```js
 
 //Props without destructuring - function recieve props as parameter 
 
@@ -127,7 +141,7 @@ function Product(props) {
 ```
 1 - destructuring within the body of the function - function recieve props as parameter
 
-```javascript
+```js
 
 export default Product
 
@@ -167,7 +181,7 @@ export default Product
 ```
 using props values from product functuion
 
-```javascript
+```js
 <Product
 img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/6142201/1.jpg?2933"
 name="Cyxus"
@@ -189,9 +203,15 @@ price="$40"
 ```
 
 
+## tips and tricks
 
-
-
+- Create a good folder-structure
+- Keep your key prop unique across your whole app
+- don't use inline-styles
+- use functional components (like arrow-functions)
+- maintain a proper import structure (third-party imports first --> internal imports below)
+- Maintain a structured import order
+- format your code before committing
 
 ## author
 
