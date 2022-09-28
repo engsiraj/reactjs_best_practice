@@ -203,7 +203,7 @@ desc="Men's Trend Casual Sports Shoe"
 price="$40"
 />
 ```
-### adding css in react
+## adding css in react
 
 there are many ways to add css in react js 
 
@@ -214,6 +214,72 @@ there are many ways to add css in react js
 
 each type will be covered here but all type are not recommended
 we can achieve it through many ways. 
+
+### inline styles
+
+We can use the styling this way by adding style to any element its not recomended way of styling  
+
+```js
+return (
+  <header>
+    <h1
+      style={{
+        fontSize: "6rem",
+        fontWeight: "600",
+        marginBottom: "2rem",
+        lineHeight: "1em",
+        color: "#ececec",
+        textTransform: "lowercase",
+        textAlign: "center",
+      }}
+    >
+      todos
+    </h1>
+  </header>
+)
+```
+
+### add through variable
+we can add the styling through variable 
+
+```js
+//storing in variable
+const headerStyle = {
+  padding: "20px 0",
+  lineHeight: "1.5em",
+}
+//usage 
+<header style={headerStyle}>
+
+```
+### adding the style css file 
+
+Here is how we can add css file in react and use the classes in any component.
+
+```js 
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./"
+
+//stylesheet
+import "./App.css"
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+)
+```
+
+### cdn links
+
+you can use cdn links through html file in src as:
+
+will be updated soon ~
+
+
+
 
 ## tips and tricks
 
