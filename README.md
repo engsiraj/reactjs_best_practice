@@ -11,6 +11,8 @@ making react js easier with best practice at one place.
 - [import and exports files and links ](#import-and-exports-files-and-links)
 - [import and exports maping through array ](#import-and-exports-maping-through-array)
 - [destructuring props in react](#destructuring-props-in-react)
+- [adding css in react](#adding-css-in-react)
+- [adding styled components in react](#adding-styled-components-in-react)
 - [tips and tricks](#tips-and-tricks)
 
 
@@ -201,7 +203,17 @@ desc="Men's Trend Casual Sports Shoe"
 price="$40"
 />
 ```
+### adding css in react
 
+there are many ways to add css in react js 
+
+- inline style
+- adding style through variable 
+- style css file 
+- cdn links to html file
+
+each type will be covered here but all type are not recommended
+we can achieve it through many ways. 
 
 ## tips and tricks
 
