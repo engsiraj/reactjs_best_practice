@@ -1,50 +1,38 @@
 # React JS Best Practices
 
-making react js easier with best practice at one place.
+making react js easier a bit with best practice.
 
-- [requirement](#first-requirement)
-
+- [requirement](#requirement)
   - [installation](#installation)
   - [jsx](#jsx)
   - [elements rendering](#elements-rendering)
-
 - [styling](#styling)
-
   - [css](#css)
   - [styled components](#styled-components)
-
 - [import and exports](#import-and-exports)
-
   - [components](#components)
   - [files and links ](#files-and-links)
   - [through array maping ](#through-maping-array)
-
 - [destructuring](#destructuring)
-
   - [destructuring props](#destructuring-props)
-
 - [tips and tricks](#tips-and-tricks)
 
 ## requirement
 
-Although react js is Javascript based frontend libarary you have to learn the logic and structure of js. but there are some pre requirement for the libarary to learn these are includes only basics of `html`, `css`, `dom`,`es6`, `node` and `npm`. although these are requirements you should have basic understanding of them and not to be master them all at once.
+although react js is Javascript frontend libarary. there are some pre requirement for learning libarary like basics of `html`, `css`, `dom`,`es6`, `node` and `npm`.you don't need to master them all.
 
 ### installation
 
-Although react js need some time for installation so you can use [vite](https://vitejs.dev/guide/) instead of installing react directly. it will save lot of your time and provide more feature along with.
+react js takes some time for installation so you can use [vite](https://vitejs.dev/guide/) instead of installing react. it will save your time and provide more features too.
 
 ```js
 npm create vite@latest
 
 ```
 
-### main concepts
-
-You donot need to hello world everytime just put some attention to the concepts and code
-
 ### jsx
 
-Jsx is nothing more than the combination of `javascript` and `xml` react is rendering the logic in jsx to show/load the elements.
+jsx is nothing just the combination of `javascript` and `xml`. react render the logic in jsx to show/load the elements.
 
 ```js
 const name = "Josh Perez";
@@ -53,7 +41,7 @@ const element = <h1>Hello, {name}</h1>;
 
 ### elements rendering
 
-we can render our element/function or piece of js code any where in jsx just using `{}`.
+we can render element/function or piece of javascript code any where in jsx using `{}`.
 
 ```js
 const name = "Josh Perez";
@@ -62,21 +50,23 @@ const element = <h1>Hello, {name}</h1>;
 
 ## styling
 
+react built to design interfaces and provide many ways to style its components.
+
 ### css
 
-there are many ways to add css in react js
+there are many ways to add css in react js.
 
 - inline style
-- adding style through variable
-- style css file
-- cdn links to html file
+- styles through variable
+- css file
+- cdn links
 
 each type will be covered here but all type are not recommended
 we can achieve it through many ways.
 
 ### inline styles
 
-We can use the styling this way by adding style to any element its not recomended way of styling
+we can add inline css to style element. it is not react recomended way of using style.
 
 ```js
 return (
@@ -94,9 +84,9 @@ return (
 );
 ```
 
-### add through variable
+### css through variable
 
-we can add the styling through variable
+we can add the css through variable.
 
 ```js
 //storing in variable
@@ -111,7 +101,7 @@ const headerStyle = {
 
 ### adding the style css file
 
-Here is how we can add css file in react and use the classes in any component.
+we can add css file in react and use `className` instead of `class` as in css because `class` is reserve keyword for Javascript `classes`.
 
 ```js
 import React from "react";
@@ -131,7 +121,7 @@ ReactDOM.render(
 
 ### cdn links
 
-you can use cdn links through html file `<head></head>` Tag in src as:
+you can use cdn links through html file `<head>` Tag as:
 
 ```js
 <link href='https://cdn.jsdelivr.net/gh/engsiraj/
@@ -140,13 +130,15 @@ designsource@master/style.css' rel="stylesheet">
 
 ### styled components
 
-styled components will be added in next update...
+styled components will be there in next few updates(would not take much time).
 
 ## import and exports
 
+imports and export are JavaScript concept its came in use in es6 update.
+
 ### components
 
-First we will create file for adding what we want to export `index.js/ts/jsx` in components folder.
+we have to create file `index.js/ts/jsx` to add exports in components folder.
 
 ```js
 //export your component as index.js/ts/jsx file.
@@ -163,7 +155,7 @@ import { ChannelCard, VideoCard, ChannelDetail, Feed } from "./";
 
 ### files and links
 
-First we will create file for adding what we want to export `utils/contant.js/ts/jsx` for components.
+we have to create file `utils/constant.js/ts/jsx` to export components.
 
 ```js
 // mui components
@@ -219,11 +211,12 @@ posts.map((post, index) => <div key={`post-${index}`} src={post} />
 
 ### destructuring props
 
-there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
+there are many ways to destructure props in JavaScript. we will explore few of them.
+
+1 - props without destructuring.
 
 ```js
-//Props without destructuring - function recieve props as parameter
-
+//Props without destructuring - function recieve props as parameter.
 function Product(props) {
   return (
     <div>
@@ -234,21 +227,18 @@ function Product(props) {
     </div>
   );
 }
+export default Product;
 ```
 
-1 - destructuring within the body of the function - function recieve props as parameter
+2 - function recieve props as parameter
 
 ```js
-
-export default Product
-
-//Destructuring within the body of the function - function recieve props as parameter
-
 function Product = (props) => {
-//First Step: Destructuring within the body of the function
+//destructuring props in the body of function.
     const { img, name, desc, price} = props;
     return (
       <div>
+      // props usage.
       <img src={img} alt="products"/>
         <h4>{name}</h4>
         <p>{description}</p>
@@ -256,17 +246,17 @@ function Product = (props) => {
       </div>
     );
 }
-
 export default Product
 ```
 
-2 - destructuring within function's parameter
+3 - function recieve props to destructure
 
 ```javascript
-//First Step: Destructuring within function's parameter
+//destructuring in function's parameter
 function Product = ({ img, name, desc, price}) => {
     return (
       <div>
+      // props usage.
       <img src={img} alt="products" />
         <h4>{name}</h4>
         <p>{description}</p>
@@ -274,11 +264,10 @@ function Product = ({ img, name, desc, price}) => {
       </div>
     );
 }
-
 export default Product
 ```
 
-using props values from product functuion
+usage of props from product functuion
 
 ```js
 <Product
@@ -301,15 +290,15 @@ price="$40"
 />
 ```
 
-### tips and tricks
+### pro tips
 
-- Create a good folder-structure
-- Keep your key prop unique across your whole app
-- don't use inline-styles
-- use functional components (like arrow-functions)
-- maintain a proper import structure (third-party imports first --> internal imports below)
-- Maintain a structured import order
-- format your code before committing
+- create a good folder-structure.
+- keep your key prop unique across the whole app.
+- don't use inline-styles.
+- use functional components (like arrow-functions).
+- maintain a proper import structure (third-party imports first --> internal imports below).
+- Maintain a structured import order.
+- format your code before committing.
 
 ### author
 
