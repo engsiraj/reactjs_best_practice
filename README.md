@@ -1,26 +1,35 @@
 # React JS Best Practices
 
-making react js easier with best practice at one place. 
+making react js easier with best practice at one place.
 
+- [requirement](#first-requirement)
 
-- [first requirement](#first-requirement)
-- [installation](#installation)
-- [jsx](#jsx)
-- [elements rendering](#elements-rendering)
-- [import and exports components](#import-and-exports-components)
-- [import and exports files and links ](#import-and-exports-files-and-links)
-- [import and exports maping through array ](#import-and-exports-maping-through-array)
-- [destructuring props in react](#destructuring-props-in-react)
-- [adding css in react](#adding-css-in-react)
-- [adding styled components in react](#adding-styled-components-in-react)
+  - [installation](#installation)
+  - [jsx](#jsx)
+  - [elements rendering](#elements-rendering)
+
+- [styling](#styling)
+
+  - [css](#css)
+  - [styled components](#styled-components)
+
+- [import and exports](#import-and-exports)
+
+  - [components](#components)
+  - [files and links ](#files-and-links)
+  - [through array maping ](#through-maping-array)
+
+- [destructuring](#destructuring)
+
+  - [destructuring props](#destructuring-props)
+
 - [tips and tricks](#tips-and-tricks)
 
-
-## first requirement
+## requirement
 
 Although react js is Javascript based frontend libarary you have to learn the logic and structure of js. but there are some pre requirement for the libarary to learn these are includes only basics of `html`, `css`, `dom`,`es6`, `node` and `npm`. although these are requirements you should have basic understanding of them and not to be master them all at once.
 
-## installation 
+### installation
 
 Although react js need some time for installation so you can use [vite](https://vitejs.dev/guide/) instead of installing react directly. it will save lot of your time and provide more feature along with.
 
@@ -29,28 +38,113 @@ npm create vite@latest
 
 ```
 
-## main concepts
+### main concepts
 
-You donot need to hello world everytime just put some attention to the concepts and code 
+You donot need to hello world everytime just put some attention to the concepts and code
 
-## jsx
+### jsx
 
 Jsx is nothing more than the combination of `javascript` and `xml` react is rendering the logic in jsx to show/load the elements.
 
 ```js
-const name = 'Josh Perez';
+const name = "Josh Perez";
 const element = <h1>Hello, {name}</h1>;
 ```
-## elements rendering
+
+### elements rendering
 
 we can render our element/function or piece of js code any where in jsx just using `{}`.
 
 ```js
-const name = 'Josh Perez';
+const name = "Josh Perez";
 const element = <h1>Hello, {name}</h1>;
 ```
 
-## import and exports components
+## styling
+
+### css
+
+there are many ways to add css in react js
+
+- inline style
+- adding style through variable
+- style css file
+- cdn links to html file
+
+each type will be covered here but all type are not recommended
+we can achieve it through many ways.
+
+### inline styles
+
+We can use the styling this way by adding style to any element its not recomended way of styling
+
+```js
+return (
+  <header>
+    <h1
+      style={{
+        fontSize: "6rem",
+        fontWeight: "600",
+        marginBottom: "2rem",
+      }}
+    >
+      todos
+    </h1>
+  </header>
+);
+```
+
+### add through variable
+
+we can add the styling through variable
+
+```js
+//storing in variable
+const headerStyle = {
+  padding: "20px 0",
+  lineHeight: "1.5em",
+}
+//usage
+<header style={headerStyle}>
+
+```
+
+### adding the style css file
+
+Here is how we can add css file in react and use the classes in any component.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./";
+
+//stylesheet
+import "./App.css";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+### cdn links
+
+you can use cdn links through html file `<head></head>` Tag in src as:
+
+```js
+<link href='https://cdn.jsdelivr.net/gh/engsiraj/
+designsource@master/style.css' rel="stylesheet">
+```
+
+### styled components
+
+styled components will be added in next update...
+
+## import and exports
+
+### components
 
 First we will create file for adding what we want to export `index.js/ts/jsx` in components folder.
 
@@ -67,7 +161,7 @@ export { default as Feed } from "./Feed";
 import { ChannelCard, VideoCard, ChannelDetail, Feed } from "./";
 ```
 
-## import and exports files and links
+### files and links
 
 First we will create file for adding what we want to export `utils/contant.js/ts/jsx` for components.
 
@@ -104,10 +198,10 @@ import {
 } from "../utils/constant";
 ```
 
-## import and exports maping through array
+### maping through array
 
 ```js
-// importing images 
+// importing images
 import post1 from "assets/post1.png";
 import post2 from "assets/post2.png";
 import post3 from "assets/post3.png";
@@ -121,26 +215,27 @@ posts.map((post, index) => <div key={`post-${index}`} src={post} />
 
 ```
 
-## destructuring props in react
+## destructuring
+
+### destructuring props
 
 there are many ways for destructuring props in react js we will explore only few usefull methods thats easy to understand/deal with.
 
 ```js
-
-//Props without destructuring - function recieve props as parameter 
+//Props without destructuring - function recieve props as parameter
 
 function Product(props) {
-    return (
-      <div>
+  return (
+    <div>
       <img src={props.img} alt="products" />
-        <h4>{props.name}</h4>
-        <p>{props.description}</p>
-        <h4>{props.price}</h4>
-      </div>
-    );
+      <h4>{props.name}</h4>
+      <p>{props.description}</p>
+      <h4>{props.price}</h4>
+    </div>
+  );
 }
-
 ```
+
 1 - destructuring within the body of the function - function recieve props as parameter
 
 ```js
@@ -154,7 +249,7 @@ function Product = (props) => {
     const { img, name, desc, price} = props;
     return (
       <div>
-      <img src={img} alt="products" />
+      <img src={img} alt="products"/>
         <h4>{name}</h4>
         <p>{description}</p>
         <h4>{price}</h4>
@@ -164,6 +259,7 @@ function Product = (props) => {
 
 export default Product
 ```
+
 2 - destructuring within function's parameter
 
 ```javascript
@@ -181,6 +277,7 @@ function Product = ({ img, name, desc, price}) => {
 
 export default Product
 ```
+
 using props values from product functuion
 
 ```js
@@ -203,85 +300,8 @@ desc="Men's Trend Casual Sports Shoe"
 price="$40"
 />
 ```
-## adding css in react
 
-there are many ways to add css in react js 
-
-- inline style
-- adding style through variable 
-- style css file 
-- cdn links to html file
-
-each type will be covered here but all type are not recommended
-we can achieve it through many ways. 
-
-### inline styles
-
-We can use the styling this way by adding style to any element its not recomended way of styling  
-
-```js
-return (
-  <header>
-    <h1
-      style={{
-        fontSize: "6rem",
-        fontWeight: "600",
-        marginBottom: "2rem",
-        lineHeight: "1em",
-        color: "#ececec",
-        textTransform: "lowercase",
-        textAlign: "center",
-      }}
-    >
-      todos
-    </h1>
-  </header>
-)
-```
-
-### add through variable
-we can add the styling through variable 
-
-```js
-//storing in variable
-const headerStyle = {
-  padding: "20px 0",
-  lineHeight: "1.5em",
-}
-//usage 
-<header style={headerStyle}>
-
-```
-### adding the style css file 
-
-Here is how we can add css file in react and use the classes in any component.
-
-```js 
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./"
-
-//stylesheet
-import "./App.css"
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-)
-```
-
-### cdn links
-
-you can use cdn links through html file in src as:
-
-will be updated soon ~
-
-
-
-
-## tips and tricks
+### tips and tricks
 
 - Create a good folder-structure
 - Keep your key prop unique across your whole app
@@ -291,6 +311,6 @@ will be updated soon ~
 - Maintain a structured import order
 - format your code before committing
 
-## author
+### author
 
 errors are expected if you find one report it to the [author](https://twitter.com/engsiraj_).
