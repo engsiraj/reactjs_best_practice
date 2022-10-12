@@ -8,6 +8,7 @@ making react js easier a bit with best practice.
   - [elements rendering](#elements-rendering)
 - [styling](#styling)
   - [css](#css)
+  - [scss](#scss)
   - [styled components](#styled-components)
 - [import and exports](#import-and-exports)
   - [components](#components)
@@ -15,7 +16,7 @@ making react js easier a bit with best practice.
   - [through array maping ](#through-maping-array)
 - [destructuring](#destructuring)
   - [destructuring props](#destructuring-props)
-- [tips and tricks](#tips-and-tricks)
+- [pro tips](#pro-tips)
 
 ## requirement
 
@@ -132,6 +133,22 @@ designsource@master/style.css' rel="stylesheet">
 
 styled components will be there in next few updates(would not take much time).
 
+### scss
+
+1. install sass using npm
+
+```
+npm i sass --save
+```
+2. create file and folder as `css/style.scss`.
+
+3. import file `style.scss` in `App.jsx` components 
+
+```js
+import './css/styles';
+```
+
+
 ## import and exports
 
 imports and export are JavaScript concept its came in use in es6 update.
@@ -169,7 +186,6 @@ export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 //react icons
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
-  { name: "JS Mastery", icon: <CodeIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
   { name: "ReactJS", icon: <CodeIcon /> },
   { name: "NextJS", icon: <CodeIcon /> },
@@ -178,9 +194,7 @@ export const categories = [
 export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
 export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
 export const demoVideoUrl = "/video/GDa8kZLNhJ4";
-
 //import from your component as utils/constant.js/ts/jsx file.
-
 import {
   demoThumbnailUrl,
   demoVideoUrl,
@@ -205,7 +219,7 @@ const posts = [post1,post2,post3,post4,post5,post6,];
 // maping array in the  div
 posts.map((post, index) => <div key={`post-${index}`} src={post} />
 
-```
+``` h
 
 ## destructuring
 
