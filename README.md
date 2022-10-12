@@ -8,7 +8,7 @@ making react js easier a bit with best practice.
   - [elements rendering](#elements-rendering)
 - [styling](#styling)
   - [css](#css)
-  - [scss](#scss)
+  - [SCSS SASS](#scss-sass)
   - [styled components](#styled-components)
 - [import and exports](#import-and-exports)
   - [components](#components)
@@ -65,7 +65,7 @@ there are many ways to add css in react js.
 each type will be covered here but all type are not recommended
 we can achieve it through many ways.
 
-### inline styles
+1. inline styles
 
 we can add inline css to style element. it is not react recomended way of using style.
 
@@ -85,7 +85,7 @@ return (
 );
 ```
 
-### css through variable
+2. css through variable
 
 we can add the css through variable.
 
@@ -100,7 +100,7 @@ const headerStyle = {
 
 ```
 
-### adding the style css file
+3. adding the style css file
 
 we can add css file in react and use `className` instead of `class` as in css because `class` is reserve keyword for Javascript `classes`.
 
@@ -120,7 +120,7 @@ ReactDOM.render(
 );
 ```
 
-### cdn links
+4. cdn links
 
 you can use cdn links through html file `<head>` Tag as:
 
@@ -129,24 +129,36 @@ you can use cdn links through html file `<head>` Tag as:
 designsource@master/style.css' rel="stylesheet">
 ```
 
-### styled components
+### SCSS SASS
 
-styled components will be there in next few updates(would not take much time).
-
-### scss
-
-1. install sass using npm
+1. install sass using npm.
 
 ```
 npm i sass --save
 ```
+
 2. create file and folder as `css/style.scss`.
 
-3. import file `style.scss` in `App.jsx` components 
+3. import file `style.scss` in `App.jsx` components.
 
 ```js
-import './css/styles';
+import "./css/styles";
 ```
+
+### styled components
+
+1. install sass using npm.
+
+```
+npm install styled-components
+```
+
+2. importing styled components `App.jsx` as:
+
+```js
+import styled from "styled-components";
+```
+
 
 
 ## import and exports
@@ -206,7 +218,7 @@ import {
 
 ### maping through array
 
-```js
+````js
 // importing images
 import post1 from "assets/post1.png";
 import post2 from "assets/post2.png";
@@ -242,7 +254,7 @@ function Product(props) {
   );
 }
 export default Product;
-```
+````
 
 2 - function recieve props as parameter
 
