@@ -237,7 +237,7 @@ import {
 
 ### maping through array
 
-````js
+```js
 // importing images
 import post1 from "assets/post1.png";
 import post2 from "assets/post2.png";
@@ -249,9 +249,7 @@ import post6 from "assets/post6.png";
 const posts = [post1,post2,post3,post4,post5,post6,];
 // maping array in the  div
 posts.map((post, index) => <div key={`post-${index}`} src={post} />
-
-``` h
-
+```
 ## destructuring
 
 ### destructuring props
@@ -273,8 +271,7 @@ function Product(props) {
   );
 }
 export default Product;
-````
-
+```
 2 - function recieve props as parameter
 
 ```js
@@ -296,7 +293,7 @@ export default Product
 
 3 - function recieve props to destructure
 
-```javascript
+```js
 //destructuring in function's parameter
 function Product = ({ img, name, desc, price}) => {
     return (
