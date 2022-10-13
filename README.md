@@ -161,11 +161,11 @@ import styled from "styled-components";
 const Title = styled.h1`
 font-size : 20px;
 `
-render(
+return(
   <Title>style title</Title>
 )
 ```
-2. extending styles
+3. extending styles
 
 ```js
 const Title = styled.h1`
@@ -175,11 +175,76 @@ color:black;
 const RedTitle = styled(Title)`
 color:red;
 `
-render(
+return(
+  <>
   <Title>style title</Title>
-  <RedTitle>this is extended title</RedTitle> 
+  <RedTitle>this is extended title</RedTitle>
+  </> 
 )
 ```
+3. props 
+
+```js
+const Button = styled.button`
+background-color:{props=>props.bg==="black"?"black":"blue"}
+`
+return(
+  <>
+  <Button bg="black">Login</Button>
+  <Button bg="blue">Login</Button>
+  </>
+)
+```
+4. nesting
+```js
+const Container = styled.div`
+border : 1px solid white;
+margin : 20px;
+p{
+  font-size: 20px;
+  color: red;
+  &:hover{
+    color:blue;
+  }
+  &::after{
+    content:"__"
+    color:red;
+  }
+}
+`
+```
+5. animations
+```js
+import styled,{keyframes} from "styled-components";
+
+const SlideIn = keyframes`
+from{
+  opacity:0;
+  }
+to{
+  opacity:1;
+}`
+const Toast = styled.div`
+animation:${SlideIn} 0.5sec cubic bazier(0.4,0,0,0.2,1) both;
+border-radius:5px;
+padding:20px;
+`
+```
+6. Global styles
+```js
+import {createGlobalStyle} from "styled-components"
+
+const GlobalStyles = creatGlobalStyle`
+// All css reset will be placed here. 
+`
+return(
+  <>
+    <GlobalStyles/>
+    <App/>
+  </>
+)
+```
+
 ## import and exports
 
 imports and export are JavaScript concept its came in use in es6 update.
