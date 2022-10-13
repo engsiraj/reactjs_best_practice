@@ -26,7 +26,7 @@ although react js is Javascript frontend libarary. there are some pre requiremen
 
 react js takes some time for installation so you can use [vite](https://vitejs.dev/guide/) instead of installing react. it will save your time and provide more features too.
 
-```js
+```
 npm create vite@latest
 
 ```
@@ -157,10 +157,29 @@ npm install styled-components
 
 ```js
 import styled from "styled-components";
+
+const Title = styled.h1`
+font-size : 20px;
+`
+render(
+  <Title>style title</Title>
+)
 ```
+2. extending styles
 
-
-
+```js
+const Title = styled.h1`
+font-size : 20px;
+color:black;
+`
+const RedTitle = styled(Title)`
+color:red;
+`
+render(
+  <Title>style title</Title>
+  <RedTitle>this is extended title</RedTitle> 
+)
+```
 ## import and exports
 
 imports and export are JavaScript concept its came in use in es6 update.
@@ -292,7 +311,6 @@ function Product = ({ img, name, desc, price}) => {
 }
 export default Product
 ```
-
 usage of props from product functuion
 
 ```js
