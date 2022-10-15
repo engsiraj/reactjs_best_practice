@@ -145,6 +145,80 @@ npm i sass --save
 import "./css/styles";
 ```
 
+4. operators
+   this is how we can use operators(+/-\*) in sass,
+
+```css
+font-size: 3rem + 3rem;
+```
+
+5. variables
+
+```css
+$bg-color: orange;
+```
+
+6. nested
+
+```scss
+.main_header {
+  display: grid;
+  h1 {
+    font-size: 50rem;
+    // for hover
+    &:hover {
+      //css
+    }
+    // pseudo css
+    &::before,
+    &::after {
+      //css
+    }
+  }
+}
+```
+
+7. mixin
+
+```scss
+mixin space_between {
+  display: flex;
+  justify-content: space-between;
+}
+//usage
+.main-header {
+  @include space_between color: $primary;
+}
+```
+
+8. parameters
+
+if you want to pass more than 1 parameter you have to just remember the sequence of the parameters you just passed to the mixin.
+
+```scss
+mixin space_between($font-size) {
+  display: flex;
+  justify-content: space-between;
+  fon_size: $font-size;
+}
+//usage
+.main-header {
+  @include space_between(20px) color: $primary;
+}
+```
+
+9. partials
+
+- file `_underscore.scss` for example: `_mixin.scss` or `_vars.scss`
+- now we just import file in other file where we want to use the scss as:
+
+```scss
+@import "mixin";
+@import "vars";
+```
+
+- yes! we don't need underscore `_` or `.scss` file extension while importing the file.
+
 ### styled components
 
 1. install sass using npm.
@@ -159,43 +233,47 @@ npm install styled-components
 import styled from "styled-components";
 
 const Title = styled.h1`
-font-size : 20px;
-`
-return(
-  <Title>style title</Title>
-)
+  font-size: 20px;
+`;
+return <Title>style title</Title>;
 ```
+
 3. extending styles
 
 ```js
 const Title = styled.h1`
-font-size : 20px;
-color:black;
-`
+  font-size: 20px;
+  color: black;
+`;
 const RedTitle = styled(Title)`
-color:red;
-`
-return(
+  color: red;
+`;
+return (
   <>
-  <Title>style title</Title>
-  <RedTitle>this is extended title</RedTitle>
-  </> 
-)
+    <Title>style title</Title>
+    <RedTitle>this is extended title</RedTitle>
+  </>
+);
 ```
-3. props 
+
+3. props
 
 ```js
 const Button = styled.button`
-background-color:{props=>props.bg==="black"?"black":"blue"}
-`
-return(
+  background-color: {
+    props=>props.bg==="black"?"black": "blue";
+  }
+`;
+return (
   <>
-  <Button bg="black">Login</Button>
-  <Button bg="blue">Login</Button>
+    <Button bg="black">Login</Button>
+    <Button bg="blue">Login</Button>
   </>
-)
+);
 ```
+
 4. nesting
+
 ```js
 const Container = styled.div`
 border : 1px solid white;
@@ -211,11 +289,13 @@ p{
     color:red;
   }
 }
-`
+`;
 ```
+
 5. animations
+
 ```js
-import styled,{keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const SlideIn = keyframes`
 from{
@@ -223,26 +303,28 @@ from{
   }
 to{
   opacity:1;
-}`
+}`;
 const Toast = styled.div`
-animation:${SlideIn} 0.5sec cubic bazier(0.4,0,0,0.2,1) both;
-border-radius:5px;
-padding:20px;
-`
+  animation: ${SlideIn} 0.5sec cubic bazier(0.4, 0, 0, 0.2, 1) both;
+  border-radius: 5px;
+  padding: 20px;
+`;
 ```
+
 6. Global styles
+
 ```js
-import {createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = creatGlobalStyle`
 // All css reset will be placed here. 
-`
-return(
+`;
+return (
   <>
-    <GlobalStyles/>
-    <App/>
+    <GlobalStyles />
+    <App />
   </>
-)
+);
 ```
 
 ## import and exports
@@ -315,6 +397,7 @@ const posts = [post1,post2,post3,post4,post5,post6,];
 // maping array in the  div
 posts.map((post, index) => <div key={`post-${index}`} src={post} />
 ```
+
 ## destructuring
 
 ### destructuring props
@@ -337,6 +420,7 @@ function Product(props) {
 }
 export default Product;
 ```
+
 2 - function recieve props as parameter
 
 ```js
@@ -373,6 +457,7 @@ function Product = ({ img, name, desc, price}) => {
 }
 export default Product
 ```
+
 usage of props from product functuion
 
 ```js
