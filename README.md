@@ -65,7 +65,7 @@ there are many ways to add css in react js.
 each type will be covered here but all type are not recommended
 we can achieve it through many ways.
 
-1. inline styles
+1 - inline styles
 
 we can add inline css to style element. it is not react recomended way of using style.
 
@@ -85,7 +85,7 @@ return (
 );
 ```
 
-2. css through variable
+2 - css through variable
 
 we can add the css through variable.
 
@@ -100,7 +100,7 @@ const headerStyle = {
 
 ```
 
-3. adding the style css file
+3 - adding the style css file
 
 we can add css file in react and use `className` instead of `class` as in css because `class` is reserve keyword for Javascript `classes`.
 
@@ -120,7 +120,7 @@ ReactDOM.render(
 );
 ```
 
-4. cdn links
+4 - cdn links
 
 you can use cdn links through html file `<head>` Tag as:
 
@@ -131,34 +131,34 @@ designsource@master/style.css' rel="stylesheet">
 
 ### SCSS SASS
 
-1. install sass using npm.
+1 - install sass using npm.
 
 ```
 npm i sass --save
 ```
 
-2. create file and folder as `css/style.scss`.
+2 - create file and folder as `css/style.scss`.
 
-3. import file `style.scss` in `App.jsx` components.
+3 - import file `style.scss` in `App.jsx` components.
 
 ```js
 import "./css/styles";
 ```
 
-4. operators
+4 - operators
    this is how we can use operators(+/-\*) in sass,
 
 ```css
 font-size: 3rem + 3rem;
 ```
 
-5. variables
+5 - variables
 
 ```css
 $bg-color: orange;
 ```
 
-6. nested
+6 - nested
 
 ```scss
 .main_header {
@@ -178,7 +178,7 @@ $bg-color: orange;
 }
 ```
 
-7. mixin
+7 - mixin
 
 ```scss
 mixin space_between {
@@ -191,7 +191,7 @@ mixin space_between {
 }
 ```
 
-8. parameters
+8 - parameters
 
 if you want to pass more than 1 parameter you have to just remember the sequence of the parameters you just passed to the mixin.
 
@@ -207,7 +207,7 @@ mixin space_between($font-size) {
 }
 ```
 
-9. partials
+9 - partials
 
 - file `_underscore.scss` for example: `_mixin.scss` or `_vars.scss`
 - now we just import file in other file where we want to use the scss as:
@@ -221,13 +221,13 @@ mixin space_between($font-size) {
 
 ### styled components
 
-1. install sass using npm.
+1 - install sass using npm.
 
 ```
 npm install styled-components
 ```
 
-2. importing styled components `App.jsx` as:
+2 - importing styled components `App.jsx` as:
 
 ```js
 import styled from "styled-components";
@@ -238,7 +238,7 @@ const Title = styled.h1`
 return <Title>style title</Title>;
 ```
 
-3. extending styles
+3 - extending styles
 
 ```js
 const Title = styled.h1`
@@ -256,7 +256,7 @@ return (
 );
 ```
 
-3. props
+4 - props
 
 ```js
 const Button = styled.button`
@@ -272,7 +272,7 @@ return (
 );
 ```
 
-4. nesting
+5 - nesting
 
 ```js
 const Container = styled.div`
@@ -292,7 +292,7 @@ p{
 `;
 ```
 
-5. animations
+6 - animations
 
 ```js
 import styled, { keyframes } from "styled-components";
@@ -311,7 +311,7 @@ const Toast = styled.div`
 `;
 ```
 
-6. Global styles
+7 - Global styles
 
 ```js
 import { createGlobalStyle } from "styled-components";
