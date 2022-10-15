@@ -8,7 +8,7 @@ making react js easier a bit with best practice.
   - [elements rendering](#elements-rendering)
 - [styling](#styling)
   - [css](#css)
-  - [SCSS SASS](#scss-sass)
+  - [scss sass](#scss-sass)
   - [styled components](#styled-components)
 - [import and exports](#import-and-exports)
   - [components](#components)
@@ -129,7 +129,7 @@ you can use cdn links through html file `<head>` Tag as:
 designsource@master/style.css' rel="stylesheet">
 ```
 
-### SCSS SASS
+### scss sass
 
 1 - install sass using npm.
 
@@ -138,15 +138,14 @@ npm i sass --save
 ```
 
 2 - create file and folder as `css/style.scss`.
-
 3 - import file `style.scss` in `App.jsx` components.
 
 ```js
-import "./css/styles";
+import "./css/styles.scss";
 ```
 
 4 - operators
-   this is how we can use operators(+/-\*) in sass,
+this is how we can use operators `+/-*` in sass,
 
 ```css
 font-size: 3rem + 3rem;
@@ -167,12 +166,12 @@ $bg-color: orange;
     font-size: 50rem;
     // for hover
     &:hover {
-      //css
+      color: red;
     }
     // pseudo css
     &::before,
     &::after {
-      //css
+      color: blue;
     }
   }
 }
@@ -187,30 +186,31 @@ mixin space_between {
 }
 //usage
 .main-header {
-  @include space_between color: $primary;
+  @include space_between;
+  color: $primary;
 }
 ```
 
 8 - parameters
-
 if you want to pass more than 1 parameter you have to just remember the sequence of the parameters you just passed to the mixin.
 
 ```scss
-mixin space_between($font-size) {
+mixin space_between($font_size) {
   display: flex;
   justify-content: space-between;
-  fon_size: $font-size;
+  font-size: $font_size;
 }
 //usage
 .main-header {
-  @include space_between(20px) color: $primary;
+  @include space_between(20px);
+  color: $primary;
 }
 ```
 
 9 - partials
 
 - file `_underscore.scss` for example: `_mixin.scss` or `_vars.scss`
-- now we just import file in other file where we want to use the scss as:
+- now we just import file in another file where we want to use the scss as:
 
 ```scss
 @import "mixin";
@@ -221,7 +221,7 @@ mixin space_between($font-size) {
 
 ### styled components
 
-1 - install sass using npm.
+1 - install styled-components using npm.
 
 ```
 npm install styled-components
