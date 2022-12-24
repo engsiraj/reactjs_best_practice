@@ -28,7 +28,6 @@ react js takes some time for installation so you can use [vite](https://vitejs.d
 
 ```
 npm create vite@latest
-
 ```
 
 ### jsx
