@@ -1,4 +1,4 @@
-### scss sass
+## scss sass
 
 
 
@@ -9,6 +9,7 @@ npm i sass --save
 ```
 
 2 - create file and folder as `css/style.scss`.
+
 3 - import file `style.scss` in `App.jsx` components.
 
 ```js
